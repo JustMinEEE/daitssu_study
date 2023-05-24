@@ -30,8 +30,8 @@ public class ArticleEntity {
         return article_id;
     }
 
-    public void setArticleId(Long id) {
-        this.article_id = id;
+    public void setArticleId(Long article_id) {
+        this.article_id = article_id;
     }
 
     public LocalDateTime getCreatedAt() {
