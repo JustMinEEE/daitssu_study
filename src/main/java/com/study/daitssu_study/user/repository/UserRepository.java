@@ -1,6 +1,6 @@
 package com.study.daitssu_study.user.repository;
 
-import org.apache.catalina.User;
+import com.study.daitssu_study.user.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 }
