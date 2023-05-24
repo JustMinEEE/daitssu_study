@@ -5,13 +5,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class ArticleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long article_id;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
     private String title;
     private String content;
+    private Long user_id; // 게시글 작성 user_id와 연결?
 
     public ArticleEntity() {
     }
@@ -21,12 +26,28 @@ public class ArticleEntity {
         this.content = content;
     }
 
-    public Long getId() {
-        return id;
+    public Long getArticleId() {
+        return article_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setArticleId(Long id) {
+        this.article_id = id;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return created_at;
+    }
+
+    public void setCreatedAt(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updated_at;
+    }
+
+    public void setUpdatedAt(LocalDateTime updated_at) {
+        this.updated_at = updated_at;
     }
 
     public String getTitle() {
@@ -48,7 +69,7 @@ public class ArticleEntity {
     @Override
     public String toString() {
         return "ArticleEntity{" +
-                "id=" + id +
+                "article_id=" + article_id +
                 ", title='" + title + '\'' +
                 ", content='" + content +'\'' +
                 '}';

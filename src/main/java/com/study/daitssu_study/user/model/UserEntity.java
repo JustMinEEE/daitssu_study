@@ -3,6 +3,8 @@ package com.study.daitssu_study.user.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @ToString
@@ -11,7 +13,9 @@ import lombok.*;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long user_id;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
     private String email;
     private String password;
     private String username;
@@ -24,12 +28,26 @@ public class UserEntity {
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return user_id;
+    }
+    public void setUserId(Long user_id) {
+        this.user_id = user_id;
+    }
+    public LocalDateTime getCreatedAt() {
+        return created_at;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCreatedAt(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updated_at;
+    }
+
+    public void setUpdatedAt(LocalDateTime updated_at) {
+        this.updated_at = updated_at;
     }
     public String getUsername() {
         return username;
